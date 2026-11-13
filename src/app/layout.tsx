@@ -1,41 +1,27 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
-import { Open_Sans } from 'next/font/google';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '../styles/mui/theme';
 import type { Metadata } from 'next';
-import './globals.css';
-
-import Header from '../components/RootLayout/Header';
-import { rootStyles } from './rootStyles';
-import { Box } from '@mui/material';
-
-const openSans = Open_Sans({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto',
-});
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript';
+import theme from '@/theme';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'MyApp',
-  description: 'A boilerplate for Next.js with MUI and Storybook.',
+  description: 'A boilerplate for Next.js with Material UI and Storybook.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en">
-      {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
-      <body className={openSans.variable}>
-        <AppRouterCacheProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <InitColorSchemeScript attribute="class" />
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
             <Header />
-            <main>
-              <Box sx={rootStyles.main}>{children}</Box>
-            </main>
+            <main>{children}</main>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

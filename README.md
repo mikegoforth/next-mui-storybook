@@ -2,11 +2,15 @@
 
 ![ScreenShot](preview.png)
 
-A WIP example Next 14 application that leverages the Material UI and Storybook.
+A WIP example [Next.js](https://nextjs.org/) 16 application that leverages [Material UI](https://mui.com/material-ui/) 9 and [Storybook](https://storybook.js.org/) 10.
 
 ## Demo
 
 Soon™
+
+## Requirements
+
+- Node.js 26 LTS (see `.nvmrc`; run `nvm use`)
 
 ## Installation
 
@@ -17,11 +21,41 @@ Install the project and run:
   npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+Other scripts:
+
+```bash
+  npm run build            # Production build
+  npm run lint             # ESLint (flat config in eslint.config.mjs)
+  npm run storybook        # Storybook dev server on :6006
+  npm run build-storybook  # Static Storybook build
+  npm run test-storybook   # Run every story as a test (Vitest + Playwright)
+```
+
+The first time you run the story tests, install the browser they use:
+
+```bash
+  npx playwright install chromium
+```
+
 ## Features
 
-- Utilizes Next's App Routing
-- Prebuilt theme with Material UI
-- Storybook for prototyping components
+- Next.js App Router with Turbopack
+- Material UI with CSS theme variables and a light / dark / system mode switch
+- Storybook (`@storybook/nextjs-vite`) with stories rendered in the app's MUI theme and a light/dark toolbar toggle
+- Every story runs as a test, including play-function interactions and automated accessibility checks
+
+## Project structure
+
+```
+src/
+├── app/                  # Next.js App Router (layout, pages)
+├── components/           # MUI components, each with a colocated *.stories.tsx
+├── stories/              # Storybook welcome page and page-level stories
+└── theme.ts              # MUI theme (palette, color schemes, typography)
+.storybook/               # Storybook config (main.ts) and MUI theme decorator (preview.tsx)
+```
 
 ## Authors
 
@@ -29,5 +63,6 @@ Install the project and run:
 
 ## Acknowledgements
 
-- This project was inspired by [Material UI - Next.js App Router example in TypeScript](https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs-ts/) by [MUI](https://github.com/mui).
-- This uses [Storybook](https://storybook.js.org/) and documentation on [Storybook for Next.js](https://storybook.js.org/docs/get-started/frameworks/nextjs).
+- Bootstrapped from [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+- Based on the [Material UI - Next.js App Router example in TypeScript](https://github.com/mui/material-ui/blob/master/examples/material-ui-nextjs-ts/) by [MUI](https://github.com/mui).
+- Uses [Storybook for Next.js (Vite)](https://storybook.js.org/docs/get-started/frameworks/nextjs-vite) and the [Vitest addon](https://storybook.js.org/docs/writing-tests/integrations/vitest-addon).
