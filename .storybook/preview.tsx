@@ -1,9 +1,8 @@
 import * as React from 'react';
 import type { Decorator, Preview } from '@storybook/nextjs-vite';
 import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider } from '@mui/material/styles';
 import { DecoratorHelpers } from '@storybook/addon-themes';
-import theme from '../src/theme';
+import SeedThemeProvider from '../src/components/SeedThemeProvider';
 
 const { initializeThemeState, pluckThemeFromContext } = DecoratorHelpers;
 
@@ -27,16 +26,15 @@ const withMuiTheme: Decorator = (Story, context) => {
     DEFAULT_MODE) as Mode;
 
   return (
-    <ThemeProvider
+    <SeedThemeProvider
       key={`${context.id}-${mode}`}
-      theme={theme}
       defaultMode={mode}
       storageManager={null}
       noSsr
     >
       <CssBaseline />
       <Story />
-    </ThemeProvider>
+    </SeedThemeProvider>
   );
 };
 

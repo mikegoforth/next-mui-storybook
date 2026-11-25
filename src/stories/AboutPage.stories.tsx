@@ -10,6 +10,7 @@ const meta = {
   component: About,
   parameters: {
     layout: 'fullscreen',
+    nextjs: { navigation: { pathname: '/about' } },
   },
   decorators: [
     (Story) => (

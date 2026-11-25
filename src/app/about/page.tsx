@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Link from '@/components/Link';
 import ProTip from '@/components/ProTip';
-import Copyright from '@/components/Copyright';
 
 export default function About() {
   return (
@@ -32,7 +31,6 @@ export default function About() {
           </Button>
         </Box>
         <ProTip />
-        <Copyright />
       </Box>
     </Container>
   );

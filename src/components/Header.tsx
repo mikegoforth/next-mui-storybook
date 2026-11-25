@@ -9,9 +9,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import AdbIcon from '@mui/icons-material/Adb';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Logo from '@/components/Logo';
 import ModeSwitch from '@/components/ModeSwitch';
 
 const pages = [
@@ -20,18 +22,25 @@ const pages = [
 ];
 
 export default function Header() {
-  const [anchorElNav, setAnchorElNav] = React.useState<HTMLElement | null>(
-    null,
-  );
+  const pathname = usePathname();
+  // Material 3 top app bars switch to a container color once content scrolls under them.
+  const scrolled = useScrollTrigger({ disableHysteresis: true, threshold: 0 });
+  const [anchorElNav, setAnchorElNav] = React.useState<HTMLElement | null>(null);
   const handleCloseNavMenu = () => setAnchorElNav(null);
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
+    <AppBar
+      position="sticky"
+      sx={{
+        bgcolor: scrolled ? 'background.container' : 'background.default',
+        color: 'text.primary',
+        transition: 'background-color 200ms cubic-bezier(0.2, 0, 0, 1)',
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar disableGutters sx={{ gap: 1, minHeight: { xs: 64 } }}>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
               aria-label="Open navigation menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -55,6 +64,8 @@ export default function Header() {
                   key={page.href}
                   component={Link}
                   href={page.href}
+                  selected={pathname === page.href}
+                  aria-current={pathname === page.href ? 'page' : undefined}
                   onClick={handleCloseNavMenu}
                 >
                   {page.label}
@@ -62,38 +73,49 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
+          <Box
             component={Link}
             href="/"
             sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1.25,
               mr: 2,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            MyApp
-          </Typography>
+            <Logo />
+            <Typography variant="h6" component="span" noWrap>
+              MyApp
+            </Typography>
+          </Box>
           <Box
             component="nav"
             aria-label="Main"
-            sx={{ display: { xs: 'none', md: 'flex' } }}
+            sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page.href}
-                component={Link}
-                href={page.href}
-                sx={{ my: 2, color: 'inherit', display: 'block' }}
-              >
-                {page.label}
-              </Button>
-            ))}
+            {pages.map((page) => {
+              const active = pathname === page.href;
+              return (
+                <Button
+                  key={page.href}
+                  component={Link}
+                  href={page.href}
+                  aria-current={active ? 'page' : undefined}
+                  sx={{
+                    color: active ? 'secondary.onContainer' : 'text.secondary',
+                    bgcolor: active ? 'secondary.container' : 'transparent',
+                    paddingInline: 2,
+                    '&:hover': {
+                      bgcolor: active ? 'secondary.container' : 'action.hover',
+                    },
+                  }}
+                >
+                  {page.label}
+                </Button>
+              );
+            })}
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <ModeSwitch />

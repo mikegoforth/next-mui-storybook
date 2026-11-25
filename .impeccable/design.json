@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T00:00:00Z",
+  "title": "Design System: MyApp (Next.js + Material UI + Storybook)",
+  "extensions": {
+    "colorMeta": {
+      "seed": { "role": "primary", "displayName": "Indigo Seed", "canonical": "#4F5BD5", "note": "DEFAULT_SEED in src/theme.ts; input to SchemeTonalSpot, never painted directly." },
+      "primary": { "role": "primary", "displayName": "Muted Indigo", "canonical": "#545a92", "dark": "#bdc2ff", "tonalRamp": ["#0f144b", "#262b61", "#3d4279", "#545a92", "#878cc8", "#bdc2ff", "#e0e0ff", "#f1efff"] },
+      "primary-container": { "role": "primary", "displayName": "Lavender Mist", "canonical": "#e0e0ff", "dark": "#3d4279" },
+      "on-primary-container": { "role": "primary", "displayName": "Deep Indigo", "canonical": "#3d4279", "dark": "#e0e0ff" },
+      "secondary": { "role": "secondary", "displayName": "Slate Lilac", "canonical": "#5c5d72", "dark": "#c4c4dd", "tonalRamp": ["#191a2c", "#2d2f42", "#444559", "#5c5d72", "#8e8fa6", "#c4c4dd", "#e1e0f9", "#f1efff"] },
+      "secondary-container": { "role": "secondary", "displayName": "Lilac Wash", "canonical": "#e1e0f9", "dark": "#444559" },
+      "tertiary": { "role": "tertiary", "displayName": "Dusky Mauve", "canonical": "#78536b", "dark": "#e7b9d5", "tonalRamp": ["#2e1126", "#45263c", "#5e3c53", "#78536b", "#ae859f", "#e7b9d5", "#ffd7ef", "#ffecf5"] },
+      "tertiary-container": { "role": "tertiary", "displayName": "Petal", "canonical": "#ffd7ef", "dark": "#5e3c53" },
+      "error": { "role": "status", "displayName": "Error Red", "canonical": "#ba1a1a", "dark": "#ffb4ab" },
+      "error-container": { "role": "status", "displayName": "Error Blush", "canonical": "#ffdad6", "dark": "#93000a" },
+      "success": { "role": "status", "displayName": "Harmonized Green", "canonical": "#1b6b45", "dark": "#8ad7a8" },
+      "success-container": { "role": "status", "displayName": "Mint Container", "canonical": "#a5f3c3", "dark": "#005231" },
+      "warning": { "role": "status", "displayName": "Harmonized Amber", "canonical": "#8f4d1f", "dark": "#ffb68a" },
+      "warning-container": { "role": "status", "displayName": "Apricot Container", "canonical": "#ffdbc8", "dark": "#723608" },
+      "info": { "role": "status", "displayName": "Harmonized Blue", "canonical": "#415d99", "dark": "#afc6ff" },
+      "info-container": { "role": "status", "displayName": "Ice Container", "canonical": "#d9e2ff", "dark": "#27457f" },
+      "surface": { "role": "neutral", "displayName": "Lilac Paper", "canonical": "#fbf8ff", "dark": "#131318", "tonalRamp": ["#1b1b21", "#303036", "#47464c", "#5e5e64", "#919097", "#c8c5cd", "#e4e1e9", "#f2eff7"] },
+      "surface-container-lowest": { "role": "neutral", "displayName": "Surface Lowest", "canonical": "#ffffff", "dark": "#0d0e13" },
+      "surface-container-low": { "role": "neutral", "displayName": "Surface Low (cards)", "canonical": "#f5f2fa", "dark": "#1b1b21" },
+      "surface-container": { "role": "neutral", "displayName": "Surface Container (scrolled bar, menus)", "canonical": "#efedf4", "dark": "#1f1f25" },
+      "surface-container-high": { "role": "neutral", "displayName": "Surface High", "canonical": "#eae7ef", "dark": "#2a292f" },
+      "surface-container-highest": { "role": "neutral", "displayName": "Surface Highest (filled inputs, switch track)", "canonical": "#e4e1e9", "dark": "#34343a" },
+      "on-surface": { "role": "neutral", "displayName": "Ink", "canonical": "#1b1b21", "dark": "#e4e1e9" },
+      "on-surface-variant": { "role": "neutral", "displayName": "Graphite Violet", "canonical": "#46464f", "dark": "#c7c5d0", "tonalRamp": ["#1b1b23", "#303038", "#46464f", "#5e5d67", "#91909a", "#c7c5d0", "#e3e1ec", "#f2effa"] },
+      "outline": { "role": "neutral", "displayName": "Outline", "canonical": "#777680", "dark": "#91909a" },
+      "outline-variant": { "role": "neutral", "displayName": "Divider", "canonical": "#c7c5d0", "dark": "#46464f" },
+      "inverse-surface": { "role": "neutral", "displayName": "Inverse Surface (tooltips)", "canonical": "#303036", "dark": "#e4e1e9" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single page headline (h1)." },
+      "headline-large": { "displayName": "Headline Large", "purpose": "Section heads (h2)." },
+      "headline": { "displayName": "Headline", "purpose": "Standalone page titles (About)." },
+      "title-large": { "displayName": "Title Large", "purpose": "Card titles, hero side heading, app name; last step of the brand face." },
+      "title-small": { "displayName": "Title Small", "purpose": "Form legends." },
+      "body-large": { "displayName": "Body Large", "purpose": "Running copy; hero copy capped at 540px." },
+      "body-medium": { "displayName": "Body Medium", "purpose": "Secondary copy." },
+      "label": { "displayName": "Label", "purpose": "Buttons, chips, nav; sentence case." },
+      "caption": { "displayName": "Caption", "purpose": "Tooltips, palette row names." },
+      "code": { "displayName": "Code", "purpose": "Import paths, tone numbers, inline file names." }
+    },
+    "shadows": [
+      { "name": "fab-level-3", "value": "0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)", "purpose": "Extended FAB only (MUI shadows[3], M3 FAB spec). Every other surface uses tonal tiers." }
+    ],
+    "motion": [
+      { "name": "ease-emphasized", "value": "cubic-bezier(0.2, 0, 0, 1)", "purpose": "Shared easing: app bar background, switch thumb, swatch hover, seed reveal." },
+      { "name": "app-bar-scroll", "value": "200ms", "purpose": "Top app bar background swap from surface to surface-container on scroll." },
+      { "name": "switch-thumb", "value": "200ms", "purpose": "Switch thumb scale 16px to 24px." },
+      { "name": "swatch-hover", "value": "150ms", "purpose": "Seed swatch 1.06 scale and outline." },
+      { "name": "seed-reveal", "value": "650ms", "purpose": "Preset re-seed: circular clip-path View Transition expanding from the chosen swatch. Custom input, reduced motion, or no support: instant." },
+      { "name": "palette-fade", "value": "300ms", "purpose": "Tonal palette cells crossfade on re-seed." }
+    ],
+    "breakpoints": [
+      { "name": "xs", "value": "0px" },
+      { "name": "sm", "value": "600px" },
+      { "name": "md", "value": "960px" },
+      { "name": "lg", "value": "1280px" },
+      { "name": "xl", "value": "1920px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Filled Button",
+      "kind": "button",
+      "refersTo": "button-filled",
+      "description": "Primary action; full pill, no elevation.",
+      "html": "<button class=\"ds-btn-filled\">Deploy now</button>",
+      "css": ".ds-btn-filled { background: #545a92; color: #ffffff; border: none; border-radius: 999px; min-height: 40px; padding: 6px 24px; font: 500 0.875rem/1.43 Roboto, sans-serif; letter-spacing: 0.007em; cursor: pointer; transition: background-color 250ms cubic-bezier(0.2, 0, 0, 1); } .ds-btn-filled:hover { background: #3d4279; } .ds-btn-filled:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tonal Button",
+      "kind": "button",
+      "refersTo": "button-tonal",
+      "description": "Custom variant=\"tonal\": secondary emphasis between filled and outlined.",
+      "html": "<button class=\"ds-btn-tonal\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z\"/></svg>Tonal</button>",
+      "css": ".ds-btn-tonal { display: inline-flex; align-items: center; gap: 8px; background: #e1e0f9; color: #444559; border: none; border-radius: 999px; min-height: 40px; padding: 6px 24px; font: 500 0.875rem/1.43 Roboto, sans-serif; letter-spacing: 0.007em; cursor: pointer; } .ds-btn-tonal:hover { background: color-mix(in srgb, #444559 8%, #e1e0f9); } .ds-btn-tonal:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outlined Button",
+      "kind": "button",
+      "refersTo": "button-outlined",
+      "description": "Lower-emphasis action with an outline-role stroke.",
+      "html": "<button class=\"ds-btn-outlined\">Documentation</button>",
+      "css": ".ds-btn-outlined { background: transparent; color: #545a92; border: 1px solid #777680; border-radius: 999px; min-height: 40px; padding: 6px 24px; font: 500 0.875rem/1.43 Roboto, sans-serif; letter-spacing: 0.007em; cursor: pointer; } .ds-btn-outlined:hover { background: rgba(84, 90, 146, 0.04); } .ds-btn-outlined:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Extended FAB",
+      "kind": "button",
+      "refersTo": "fab-extended",
+      "description": "Primary-container FAB, 16px corners; the one elevated component.",
+      "html": "<button class=\"ds-fab\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z\"/></svg>New project</button>",
+      "css": ".ds-fab { display: inline-flex; align-items: center; gap: 12px; height: 56px; padding: 0 20px; background: #e0e0ff; color: #3d4279; border: none; border-radius: 16px; box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12); font: 500 0.875rem/1.43 Roboto, sans-serif; cursor: pointer; } .ds-fab:hover { background: color-mix(in srgb, #3d4279 8%, #e0e0ff); } .ds-fab:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip-filter-selected",
+      "description": "8px-corner filter chips; selected fills secondary-container with a check.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip--on\" aria-pressed=\"true\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z\"/></svg>Next.js</button><button class=\"ds-chip\" aria-pressed=\"false\">Storybook</button></div>",
+      "css": ".ds-chips { display: flex; gap: 8px; } .ds-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 8px; border: 1px solid #777680; background: transparent; color: #1b1b21; font: 500 0.8125rem Roboto, sans-serif; cursor: pointer; } .ds-chip--on { background: #e1e0f9; color: #444559; border-color: transparent; } .ds-chip:hover { background: rgba(27, 27, 33, 0.04); } .ds-chip--on:hover { background: color-mix(in srgb, #444559 8%, #e1e0f9); } .ds-chip:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outlined Text Field",
+      "kind": "input",
+      "refersTo": "input-outlined",
+      "description": "4px corners, outline stroke at rest, primary 2px on focus.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Project name</span><input class=\"ds-input\" value=\"my-app\"></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 4px; font-family: Roboto, sans-serif; } .ds-field-label { font-size: 0.75rem; color: #46464f; } .ds-input { height: 56px; padding: 0 14px; border: 1px solid #777680; border-radius: 4px; background: transparent; color: #1b1b21; font: 400 1rem Roboto, sans-serif; } .ds-input:hover { border-color: #1b1b21; } .ds-input:focus-visible { outline: none; border: 2px solid #545a92; padding: 0 13px; }"
+    },
+    {
+      "name": "Gallery Region Card",
+      "kind": "card",
+      "refersTo": "card-region",
+      "description": "Surface-container-low card, 16px corners, title plus code import paths; no shadow.",
+      "html": "<section class=\"ds-card\"><h3 class=\"ds-card-title\">Buttons</h3><ul class=\"ds-card-imports\"><li>@mui/material/Button</li><li>@mui/material/Fab</li></ul></section>",
+      "css": ".ds-card { background: #f5f2fa; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 4px; } .ds-card-title { margin: 0; font: 500 1.375rem/1.27 'Google Sans Flex', system-ui, sans-serif; color: #1b1b21; } .ds-card-imports { display: flex; flex-wrap: wrap; column-gap: 16px; margin: 0; padding: 0; list-style: none; font: 400 0.8125rem/1.54 'Google Sans Code', ui-monospace, monospace; color: #46464f; }"
+    },
+    {
+      "name": "Top App Bar",
+      "kind": "nav",
+      "refersTo": "top-app-bar",
+      "description": "Surface at rest, surface-container once scrolled; swatch mark and active-pill nav.",
+      "html": "<header class=\"ds-bar\"><span class=\"ds-bar-brand\"><svg width=\"32\" height=\"32\" viewBox=\"0 0 40 40\" aria-hidden=\"true\"><path d=\"M0 20a20 20 0 0 1 40 0z\" fill=\"#6d73ad\"/><path d=\"M20 20H0a20 20 0 0 0 20 20z\" fill=\"#b7b7cf\"/><path d=\"M20 20h20a20 20 0 0 1-20 20z\" fill=\"#bc91ac\"/></svg>MyApp</span><nav class=\"ds-bar-nav\"><a class=\"ds-nav-item ds-nav-item--active\" aria-current=\"page\" href=\"#\">Home</a><a class=\"ds-nav-item\" href=\"#\">About</a></nav></header>",
+      "css": ".ds-bar { display: flex; align-items: center; gap: 16px; height: 64px; padding: 0 16px; background: #fbf8ff; color: #1b1b21; transition: background-color 200ms cubic-bezier(0.2, 0, 0, 1); } .ds-bar:hover { background: #efedf4; } .ds-bar-brand { display: flex; align-items: center; gap: 10px; font: 500 1.375rem 'Google Sans Flex', system-ui, sans-serif; } .ds-bar-nav { display: flex; gap: 4px; } .ds-nav-item { padding: 6px 16px; border-radius: 999px; color: #46464f; text-decoration: none; font: 500 0.875rem/1.43 Roboto, sans-serif; } .ds-nav-item:hover { background: rgba(27, 27, 33, 0.04); } .ds-nav-item--active, .ds-nav-item--active:hover { background: #e1e0f9; color: #444559; } .ds-nav-item:focus-visible { outline: 2px solid #545a92; outline-offset: 2px; }"
+    },
+    {
+      "name": "Seed Picker",
+      "kind": "custom",
+      "refersTo": "seed",
+      "description": "Five tri-segment preset swatches plus a dashed custom-seed swatch (native color input). Presets reveal via circular View Transition; custom applies instantly.",
+      "html": "<div class=\"ds-seeds\"><label class=\"ds-swatch ds-swatch--on\"><svg viewBox=\"0 0 40 40\" aria-hidden=\"true\"><path d=\"M0 20a20 20 0 0 1 40 0z\" fill=\"#6d73ad\"/><path d=\"M20 20H0a20 20 0 0 0 20 20z\" fill=\"#b7b7cf\"/><path d=\"M20 20h20a20 20 0 0 1-20 20z\" fill=\"#bc91ac\"/></svg></label><label class=\"ds-swatch ds-swatch--custom\" title=\"Custom color\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M20.71 5.63l-2.34-2.34a.996.996 0 0 0-1.41 0l-3.12 3.12-1.93-1.91-1.41 1.41 1.42 1.42L3 16.25V21h4.75l8.92-8.92 1.42 1.42 1.41-1.41-1.92-1.92 3.12-3.12c.4-.4.4-1.03.01-1.42zM6.92 19 5 17.08l8.06-8.06 1.92 1.92L6.92 19z\"/></svg></label></div>",
+      "css": ".ds-seeds { display: flex; gap: 12px; color: #3d4279; } .ds-swatch { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; outline: 2px solid transparent; outline-offset: 2px; transition: outline-color 150ms, transform 150ms cubic-bezier(0.2, 0, 0, 1); } .ds-swatch > svg:first-child:not([width]) { width: 92%; height: 92%; } .ds-swatch:hover { transform: scale(1.06); } .ds-swatch--on { outline-color: currentColor; } .ds-swatch:focus-visible { outline: 2px dashed currentColor; } .ds-swatch--custom { box-sizing: border-box; border: 2px dashed currentColor; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "One Seed, Every Color",
+    "overview": "This is Material 3 Tonal, built on MUI. A single seed color (`DEFAULT_SEED` in `src/theme.ts`) goes through `SchemeTonalSpot` from `@material/material-color-utilities`, which generates every color role for both light and dark. The world is meant to read as a finished, recognizably Material 3 app: lavender-tinted surfaces, pill-shaped actions, soft container fills, and a brand face with rounded terminals. The seed itself never appears raw. TonalSpot tames `#4F5BD5` into a muted indigo primary, and that restraint is the house tone.\n\nDensity is comfortable. Content sits in a `lg` container (max 1280px) with generous panel padding. Depth comes from tonal surface-container tiers, not from shadows. The swatch mark (primary across the top half, secondary and tertiary in the bottom quarters) serves as both logo and seed control, so you can see the theme mechanism directly. Light, dark and system schemes are class-driven. Storybook wraps every story in the same `SeedThemeProvider`, so the app and Storybook render identically.",
+    "keyCharacteristics": [
+      "Every color is a generated role. The frontmatter hexes are the default seed's light-scheme output, not constants.",
+      "Depth comes from surface-container tiers. The extended FAB is the single shadowed component.",
+      "Corners are assigned by family: 4 fields, 8 chips/menus, 16 cards/FAB/alerts, 28-32 hero panel, full pills for buttons.",
+      "Google Sans Flex (rounded, `ROND` 100 at display sizes) for brand type, Roboto for plain type, Google Sans Code for code.",
+      "Re-seeding with a preset reveals the new theme as a circle expanding from the chosen swatch."
+    ],
+    "rules": [
+      { "name": "The One Seed Rule", "body": "Components reference roles (`primary.container`, `background.containerLow`), never hex values. Any seed, including a custom one, has to re-theme the whole surface and Storybook with no code change.", "section": "colors" },
+      { "name": "The Container-Pair Rule", "body": "A colored fill always takes its matching on-color: container with onContainer, main with contrastText. Never mix pairs across roles.", "section": "colors" },
+      { "name": "The Sentence-Case Rule", "body": "Buttons and labels are never uppercased (`textTransform: none`). M3 label weight comes from 500 weight, not from case.", "section": "typography" },
+      { "name": "The Brand-Above-Title Rule", "body": "The brand face stops at Title Large. Everything smaller is Roboto.", "section": "typography" },
+      { "name": "The Tier-Not-Shadow Rule", "body": "Depth is shown by moving up a surface-container tier. The FAB is the exception and stays the only one: no new component gets a shadow unless the M3 spec for that component calls for one.", "section": "elevation" },
+      { "name": "The Scroll-Under Rule", "body": "The top app bar sits on the page surface at rest. It changes to surface-container only once content scrolls under it (MUI `useScrollTrigger`, threshold 0, 200ms `cubic-bezier(0.2, 0, 0, 1)` background transition). It is not surface-container at rest.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reference palette roles (`primary.container`, `background.containerLow`, `secondary.onContainer`) so any seed re-themes the component.",
+      "Do pair every fill with its on-color (container/onContainer, main/contrastText).",
+      "Do express depth by stepping up a surface-container tier.",
+      "Do use the corner families: 4 fields, 8 chips/menus, 16 cards/FAB/alerts, full pills for buttons.",
+      "Do use the tonal button for secondary emphasis between filled and outlined.",
+      "Do keep the brand face to Title Large and above, and set code in Google Sans Code.",
+      "Do keep the app bar on the page surface at rest and switch it to surface-container on scroll.",
+      "Do keep motion on `cubic-bezier(0.2, 0, 0, 1)` and honor `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "Don't hardcode hex values from this file into components. They are one seed's output.",
+      "Don't add shadows to cards, buttons, menus or the app bar. The extended FAB's level-3 shadow is the single sanctioned one.",
+      "Don't uppercase button or chip labels.",
+      "Don't use tertiary by default. It is an explicit, contrasting choice.",
+      "Don't put more than one primary-container hero block on a page."
+    ]
+  }
+}

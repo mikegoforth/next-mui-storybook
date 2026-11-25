@@ -42,6 +42,8 @@ The first time you run the story tests, install the browser they use:
 ## Features
 
 - Next.js App Router with Turbopack
+- A Material 3 theme generated from one seed color (`DEFAULT_SEED` in `src/theme.ts`) with [Material Color Utilities](https://github.com/material-foundation/material-color-utilities): tonal primary, secondary and tertiary roles, surface-container tiers, light and dark schemes
+- A live seed picker on the home page that re-themes the whole app, plus a gallery of themed MUI components
 - Material UI with CSS theme variables and a light / dark / system mode switch
 - Storybook (`@storybook/nextjs-vite`) with stories rendered in the app's MUI theme and a light/dark toolbar toggle
 - Every story runs as a test, including play-function interactions and automated accessibility checks
@@ -53,7 +55,7 @@ src/
 ├── app/                  # Next.js App Router (layout, pages)
 ├── components/           # MUI components, each with a colocated *.stories.tsx
 ├── stories/              # Storybook welcome page and page-level stories
-└── theme.ts              # MUI theme (palette, color schemes, typography)
+└── theme.ts              # MUI theme: seed color, generated palette, typography, component overrides
 .storybook/               # Storybook config (main.ts) and MUI theme decorator (preview.tsx)
 ```
 

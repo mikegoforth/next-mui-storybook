@@ -19,11 +19,19 @@ type Story = StoryObj<typeof meta>;
 
 export const Desktop: Story = {
   play: async ({ canvas }) => {
-    const nav = canvas.getByRole('navigation', { name: 'Main' });
-    await expect(within(nav).getByRole('link', { name: 'About' })).toHaveAttribute(
-      'href',
-      '/about',
-    );
+    const nav = within(canvas.getByRole('navigation', { name: 'Main' }));
+    await expect(nav.getByRole('link', { name: 'Home' })).toHaveAttribute('aria-current', 'page');
+    await expect(nav.getByRole('link', { name: 'About' })).toHaveAttribute('href', '/about');
+  },
+};
+
+export const OnAboutPage: Story = {
+  parameters: {
+    nextjs: { navigation: { pathname: '/about' } },
+  },
+  play: async ({ canvas }) => {
+    const nav = within(canvas.getByRole('navigation', { name: 'Main' }));
+    await expect(nav.getByRole('link', { name: 'About' })).toHaveAttribute('aria-current', 'page');
   },
 };
 
